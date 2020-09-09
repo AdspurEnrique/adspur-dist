@@ -1,0 +1,70 @@
+
+// GLOBAL ANIMATIONS
+// =================
+//
+
+
+// Fade in
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.animate-fade-in {
+	animation: fade-in 0.75s cubic-bezier(0.075, 0.820, 0.165, 1.000) both;
+}
+
+
+// Bring cards in a sequence
+
+@keyframes card-waterfall {
+	0% {
+		transform: scale(0.85);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.animate-card-waterfall {
+
+	animation: card-waterfall 0.75s cubic-bezier(0.075, 0.820, 0.165, 1.000) both;
+	animation-delay: (25ms * 1) + 25;
+
+	@media (min-width: 960px) and (max-width: 1279px) {
+		$diagonal-grid-3: (2,3,6,9,12,15);
+		@for $i from 1 through length($diagonal-grid-3) {
+			&:nth-of-type(2n + #{nth($diagonal-grid-3, $i)}) {
+				animation-delay: #{nth($diagonal-grid-3, $i) * 25 + 25ms };
+			}
+		}
+	}
+
+	@media (min-width: 1280px) {
+		$diagonal-grid-4: (2,3,4,8,12,16,20,24);
+		@for $i from 1 through length($diagonal-grid-4) {
+			&:nth-of-type(3n + #{nth($diagonal-grid-4, $i)}) {
+				animation-delay: #{nth($diagonal-grid-4, $i) * 25 + 25ms };
+			}
+		}
+	}
+
+	section:not(.g-page-width) & {
+		@media (min-width: 1920px) {
+			$diagonal-grid-5: (2,3,4,5,10,15,20,25,30);
+			@for $i from 1 through length($diagonal-grid-5) {
+				&:nth-of-type(4n + #{nth($diagonal-grid-5, $i)}) {
+					animation-delay: #{nth($diagonal-grid-5, $i) * 25 + 25ms };
+				}
+			}
+		}
+	}
+}
+

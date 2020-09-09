@@ -1,0 +1,97 @@
+
+// GLOBAL FORMS
+// ============
+//
+// Base setup not in Material
+// Modifications of global Material styles
+
+@import '../adspur-config';
+
+
+// Remove webkit native clear (X) button
+input[type="search"]::-webkit-search-cancel-button {
+	display: none;
+	appearance: textfield;
+}
+
+
+// Global "Segoe UI" upsets icon heights so rest without
+.mat-icon-button,
+.mat-raised-button {
+  font-family: -apple-system, BlinkMacSystemFont,
+  Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.mat-form-field-wrapper {
+	// Bring text inputs up to 16px. Clearer and stops zoom on Safari
+	font-size: 16px;
+	// Potentially dangerous but adds some space around text
+	line-height: 24px;
+}
+
+.mat-form-field-subscript-wrapper {
+	margin-top: 0;
+}
+
+
+// Safari search input quirks
+input[type="search"] {
+	appearance: textfield;
+}
+input[type="search"]::-webkit-search-decoration {
+	appearance: none;
+}
+
+
+// Cover up border radiuses of input
+.mat-autocomplete-panel {
+	margin-top: -2px;
+	border-radius: 0 0 $b-rad $b-rad;
+}
+
+
+// Space for password hints below field
+.mat-form-field.new-password-field {
+	.mat-form-field-wrapper {
+		padding-bottom: 16px;
+	}
+
+	.mat-form-field-subscript-wrapper {
+		position: relative;
+		padding-top: 8px;
+	}
+}
+
+
+// Form field color invert for dark BG
+form.dark-theme {
+	.mat-form-field-appearance-legacy {
+		.mat-input-element {
+			caret-color: rgba(255, 255, 255, 0.87);
+		}
+
+		&.mat-form-field-invalid .mat-input-element {
+			caret-color: mat-color($warn);
+		}
+
+		&.mat-focused .mat-form-field-label,
+		.mat-form-field-label {
+			color: rgba(255, 255, 255, 0.87);
+		}
+
+		&.mat-form-field-invalid .mat-form-field-label {
+			color: mat-color($warn);
+		}
+
+		&.mat-focused .mat-form-field-ripple,
+		.mat-form-field-underline {
+			background-color: rgba(255, 255, 255, 0.87);
+		}
+
+		&.mat-form-field-invalid .mat-form-field-ripple,
+		&.mat-form-field-invalid .mat-form-field-underline {
+			background-color: mat-color($warn);
+		}
+	}
+}

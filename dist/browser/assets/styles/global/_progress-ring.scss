@@ -1,0 +1,39 @@
+
+// GLOBAL PROGRESS RING
+// ====================
+//
+// Build uppon the <mat-progress-spinner>, as seen in the Review area
+//
+
+@import '~@angular/material/theming';
+@import '../adspur-config';
+@import '../adspur-theme';
+
+// Progress ring
+.progress-ring {
+	.app-review-area & {
+		margin-top: -8px;
+		margin-bottom: -8px;
+	}
+
+	.mat-caption {
+		padding-top: 4px;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.progress-ring_value {
+		font-weight: $light;
+		margin: -60px 0 20px;
+		font-size: 24px;
+	}
+
+	.progress-ring_label {
+		opacity: .25;
+		transition: opacity .15s cubic-bezier(.33,.66,.66,1);
+	}
+
+	&:hover .progress-ring_label {
+		opacity: 0.75;
+	}
+}

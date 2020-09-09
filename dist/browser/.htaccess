@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteRule ^api/(.*) http://v3-api.adspur.com/api/$1 [R,L]
+
+# If an existing asset or directory is requested go to it as it is
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+# If http go to https
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule .* https://%{HTTP:Host}%{REQUEST_URI} [L,R=permanent]
+
+# If the requested resource doesn't exist, use index.html
+RewriteRule ^ /index.html

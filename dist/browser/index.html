@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Adspur</title>
+	<base href="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700|Open+Sans:800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:900&text=1234567890&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://v3-api.adspur.com">
+	<link rel="preconnect" href="https://adspur-awardshows.imgix.net">
+	<link rel="preconnect" href="https://adspur-thumbnail.imgix.net">
+	<link rel="preconnect" href="https://adspur.imgix.net">
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+	<!-- <link rel="manifest" href="manifest.json"> -->
+	<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#34474f">
+	<!-- <meta name="theme-color" content="#37474f"> -->
+	<meta http-equiv="Accept-CH" content="Width,DPR">
+	<meta content="telephone=no" name="format-detection">
+	<meta name="description" content="The online advertising awards calendar. Follow national, regional and global advertising award shows, download and sync your online calendar. Never miss a call for entry or a deadline again!">
+	<style>
+		html, body {margin:0; padding:0;}
+		html {min-height:100%; display:flex;}
+		body {min-height:100%; width:100%; flex:1;}
+		.app-spinner-wrapper {margin-top:10em; justify-content:center; align-items:center; flex-direction:row; box-sizing:border-box; display:flex;}
+		.app-spinner {display:block; position:relative; box-sizing:border-box; width:80px; height:80px; animation:app-spinner-linear-rotate 2s linear infinite;}
+		.app-spinner svg {position:absolute; transform:rotate(-90deg); top:0; left:0; transform-origin:center; overflow:visible; width:80px; height:80px;}
+		.app-spinner circle {stroke:#37474f; fill:transparent; transform-origin:center; transition:stroke-dashoffset 225ms linear; transition-property:stroke; animation-duration:4s; animation-timing-function:cubic-bezier(.35, 0, .25, 1); animation-iteration-count:infinite; animation-name:app-spinner-stroke-rotate-80; stroke-dasharray:219.911px; stroke-width:2.5%;}
+		@keyframes app-spinner-linear-rotate {0% {transform:rotate(0);} 100% {transform:rotate(360deg);}}
+		@keyframes app-spinner-stroke-rotate-80 {0% {stroke-dashoffset:208.916; transform:rotate(0deg);} 12.5% {stroke-dashoffset:43.9823; transform:rotate(0deg);} 12.5001% {stroke-dashoffset:43.9823; transform:rotateX(180deg) rotate(72.5deg);} 25% {stroke-dashoffset:208.916; transform:rotateX(180deg) rotate(72.5deg);} 25.0001% {stroke-dashoffset:208.916; transform:rotate(270deg);} 37.5% {stroke-dashoffset:43.9823; transform:rotate(270deg);} 37.5001% {stroke-dashoffset:43.9823; transform:rotateX(180deg) rotate(161.5deg);} 50% {stroke-dashoffset:208.916; transform:rotateX(180deg) rotate(161.5deg);} 50.0001% {stroke-dashoffset:208.916; transform:rotate(180deg);} 62.5% {stroke-dashoffset:43.9823; transform:rotate(180deg);} 62.5001% {stroke-dashoffset:43.9823; transform:rotateX(180deg) rotate(251.5deg);} 75% {stroke-dashoffset:208.916; transform:rotateX(180deg) rotate(251.5deg);} 75.0001% {stroke-dashoffset:208.916; transform:rotate(90deg);} 87.5% {stroke-dashoffset:43.9823; transform:rotate(90deg);} 87.5001% {stroke-dashoffset:43.9823; transform:rotateX(180deg) rotate(341.5deg);} 100% {stroke-dashoffset:208.916; transform:rotateX(180deg) rotate(341.5deg);}}
+	</style>
+	<script async defer src="https://cdn.jwplayer.com/libraries/0HiCa1iH.js"></script>
+	<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDylKRp5tjKi-YurGlfLEFs7YvjURO4tIM&libraries=places"></script> -->
+	<script>
+		//(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		//ga('create', 'UA-147248451-1', 'auto');
+	</script>
+<link rel="stylesheet" href="styles.3ffe663ae7b4f35b1672.css"></head>
+<body class="mat-app-background">
+	<app-root layout="column">
+		<div aria-label="Loading Adspur" class="app-spinner-wrapper" role="alert" aria-live="assertive">
+			<mat-spinner class="app-spinner" role="progressbar">
+				<svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 72 72">
+					<circle cx="50%" cy="50%" r="35"></circle>
+				</svg>
+			</mat-spinner>
+		</div>
+	</app-root>
+	<noscript>
+		<div style="margin: -8px; color:#37474f; border-top:64px solid;">
+			<div style="max-width:30em; margin:0 auto; font-family:sans-serif; padding:2em;">
+				<h3>Welcome to Adspur</h3>
+				<p>To view our site it is necessary to enable Java Script. Here are instructions to <a href="https://www.enable-javascript.com/" target="_blank">enable Java Script</a> in your web browser.</p>
+			</div>
+		</div>
+	</noscript>
+<script src="runtime.3bdb22ed98a17e1965ba.js" defer></script><script src="polyfills-es5.7fa9119cfae54b772c57.js" nomodule defer></script><script src="polyfills.c720a9e0b83ead2b92d4.js" defer></script><script src="main.4a4135846356896e71a3.js" defer></script></body>
+</html>

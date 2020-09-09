@@ -1,0 +1,105 @@
+
+@import '~@angular/material/theming';
+
+// ADSPUR CONFIGURATION
+// ====================
+//
+//-Font Weights
+//-Second Font Family
+//-Colours
+//-Dimensions
+
+
+//-Font Weights
+//=============
+
+$light:                      300;
+$normal:                     400;
+$bold:                       500;
+$heavy:                      700;
+$second-font-heavy:          800;
+
+
+//-Second Font Family
+//===================
+
+$second-font:                'Open Sans';
+$number-font:                'Lato','Open Sans'; // Only 1234567890 characters
+
+
+//-Colours
+//========
+
+$c-adspur-teal:              #78b9b1;
+$c-adspur-dark:              #2a3940;
+
+// Main Google Mat variables set in `adspur_theme.scss`
+$c-adspur-body:              rgba(0, 0, 0, 0.87); // Stolen from .mat-background
+$c-adspur-body-bg:           #fff; // Stolen from .mat-background
+
+// System colour
+$c-adspur-info:              #30ad9d;
+$c-adspur-issue:             #f90;
+$c-adspur-success:           #4caf50;
+$c-adspur-light-grey:        #f5f5f5;
+
+// Event colour - maybe not suitable for Material
+$c-event-default:            $c-adspur-teal;
+$c-event-eligible:           $c-adspur-teal;
+$c-event-not-eligible:       #9aa3a7;
+$c-event-today:              mat-color($mat-deep-orange, A400); // (accent) original - #ff876d
+$c-event-eligibility:        #000000;
+$c-event-call-for-entries:   mat-color($mat-green,       A700); // original - #48b579
+$c-event-early-deadline:     mat-color($mat-red,         A200); // original - #ff6766
+$c-event-early-deadline:     mat-color($mat-red,         A200); // original - #ff6766
+$c-event-internal-deadline:  $c-adspur-light-grey;
+$c-event-deadline:           mat-color($mat-red,         A400); // original - #ce2b29
+$c-event-extended-deadline:  mat-color($mat-red,         A700); // original - #8c2014
+$c-event-final-deadline:     mat-color($mat-red,          900); // original - #B71C1C
+$c-event-judging:            mat-color($mat-deep-purple, A400); // original - #4b0082
+$c-event-festival:           mat-color($mat-indigo,      A400); // original - #73b9c7
+$c-event-award-show:         mat-color($mat-cyan,        A700); // original - #77939c
+$c-event-winners:            mat-color($mat-amber,       A700); // original - #dca306
+
+
+// Award state colours
+$c-award-grandprix:          #3c3c3b;
+$c-award-grandprix-color:    #fff;
+$c-award-gold:               #daa520;
+$c-award-gold-color:         #fff;
+$c-award-silver:             #c0c0c0;
+$c-award-silver-color:       #fff;
+$c-award-bronze:             #8c7853;
+$c-award-bronze-color:       #fff;
+$c-award-shortlist:          #14a8e3;
+$c-award-shortlist-color:    #fff;
+$c-award-yellow:             #fdd200;
+$c-award-yellow-color:       #000;
+$c-award-entered:            #008000;
+$c-award-entered-color:      #fff;
+$c-award-awaiting:           #eb8d00;
+$c-award-awaiting-color:     #fff;
+$c-award-inprogress:         #fabe4d;
+$c-award-inprogress-color:   #000;
+$c-award-feedback:           #777;
+$c-award-feedback-color:     #fff;
+$c-award-approved:           #4caf50;
+$c-award-approved-color:     #fff;
+$c-award-denied:             #ff5468;
+$c-award-denied-color:       #fff;
+
+// Taxonomies
+$c-tax-medium:               $c-adspur-teal;
+$c-tax-category:             darken( $c-adspur-teal, 20% );
+
+
+//-Dimensions
+//===========
+
+$header-height:              56px;
+
+// Date card slash angle
+$date-deg:                   15deg;
+
+// Border Radius
+$b-rad:                      4px; // Matches Material uses

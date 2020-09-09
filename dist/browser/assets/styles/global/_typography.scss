@@ -1,0 +1,523 @@
+
+// GLOBAL TYPOGRAPHY
+// =================
+//
+// Base setup not in Material
+// Modifications of global Material styles
+
+@import '~@angular/material/theming';
+@import '../adspur-config';
+@import '../adspur-theme';
+
+
+// Link
+.text-link,
+.user-body-content a {
+	color: currentColor;
+	text-decoration: none;
+	padding: 1px 2px;
+	margin: -1px -2px;
+	cursor: pointer;
+	background: rgba(255,255,255,0);
+	transition: all .15s cubic-bezier(.33,.66,.66,1);
+	box-shadow: inset 0 -1px 0 mat-color($accent);
+
+	&:hover,
+	&:focus {
+		color: #FFF;
+		background: mat-color($accent);
+		outline: none;
+	}
+
+	&:visited {
+		box-shadow: inset 0 -1px 0 mat-color($primary);
+		&:hover,
+		&:focus {
+			background: mat-color($primary);
+		}
+	}
+
+	&.is-inactive {
+		box-shadow: none;
+	}
+}
+
+
+// Cheeky utility small
+.small {
+	font-size: 10px;
+}
+
+// Cheeky Wights
+.strong { font-weight: $heavy; }
+.normal { font-weight: $normal; }
+.light { font-weight: $light; }
+
+
+// Cheeky utility em
+.em {
+	font-style: italic;
+}
+
+
+// Set global HR color
+hr {
+	border-color: #e8e8e8;
+	border-style: solid;
+	border-bottom-width: 0;
+}
+
+
+code {
+	background: #fff6e6;
+	padding: 2px 4px;
+	color: #3a3a3a;
+	border-radius: 4px;
+	font-weight: $normal;
+	text-transform: none;
+	word-break: break-word;
+}
+
+
+// The "number" font
+.number.number {
+	font-family: $number-font;
+	font-weight: 700;
+}
+
+
+// Set up our own .mat-type without aggressive child classes
+// Font stack can be found in _adspur-theme.scss
+.mat-type,
+.mat-chip {
+	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
+	Helvetica, Arial, sans-serif,
+	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+
+// Invent new Display font - needs .mat-type
+.mat-display-0 {
+	font-size: 28px;
+	line-height: 40px;
+	font-weight: $light;
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+
+
+// Modify Material headlines
+//==========================
+.mat-headline {
+	color: mat-color($primary);
+	font-family: $second-font, sans-serif;
+	font-weight: $second-font-heavy;
+}
+
+.mat-display-1 {
+	font-weight: $light;
+	margin-bottom: 32px;
+}
+
+.mat-display-2 {
+	font-weight: $light;
+	margin-bottom: 32px;
+}
+
+
+// Visually hidden for screen readers
+// This is the built in class your looking for
+//
+// .cdk-visually-hidden
+
+
+// Alignments
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+.text-center {text-align: center;}
+.text-justify {text-align: justify;}
+
+
+// Transforms
+.upper,
+.text-uppercase {text-transform: uppercase;}
+.text-lowercase {text-transform: lowercase;}
+.text-capitalize {text-transform: capitalize;}
+.text-nonecase {text-transform: none;}
+
+
+// Wrapping
+.nowrap {white-space: nowrap;}
+
+.truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.line-clamp--2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+// Max comfortable reading width
+.max-line-length {max-width: 50em;}
+
+
+// Big background text
+.text-background {
+	margin: 2em;
+	opacity: 0.3;
+	text-align: center;
+	font-weight: $light;
+}
+
+
+// Labels
+//=======
+.text-label {
+	display: inline-block;
+	padding: 2px 4px;
+	font-size: 10px;
+	font-weight: $normal;
+	line-height: normal;
+	text-transform: uppercase;
+
+	&.text-nonecase {
+		text-transform: none;
+	}
+
+	.mat-icon {
+		vertical-align: middle;
+	}
+}
+
+.text-label-row {
+	list-style-type: none;
+	clear: both;
+	margin: 16px 0;
+	padding: 0;
+
+	.text-label {
+		margin-top: 4px;
+		margin-right: 4px;
+	}
+}
+
+
+
+// Dot
+//====
+// Use .text-* classes for color
+.text-dot {
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 2em;
+	line-height: 12px;
+	width: 12px;
+	text-align: left;
+
+	&::after {
+		content: "\2022";
+	}
+	&--dummy {
+		color: rgba(255,255,255,0);
+	}
+
+	&--lg {
+		width: 22px;
+		font-size: 50px;
+		padding-top: 3px;
+	}
+}
+
+
+
+// Alpha
+//======
+.text-al-40 { color: rgba(0, 0, 0, 0.40); }
+.text-al-54 { color: rgba(0, 0, 0, 0.54); }
+.text-al-66 { color: rgba(0, 0, 0, 0.66); }
+.text-al-87 { color: rgba(0, 0, 0, 0.87); }
+
+
+
+// Opacity
+//========
+.text-op-25  { opacity: 0.25; }
+.text-op-50  { opacity: 0.50; }
+.text-op-75  { opacity: 0.75; }
+.text-op-100 { opacity: 0.100;}
+
+
+
+// System colours
+//===============
+.text-teal      { color: $c-adspur-teal; }
+.text-highlight { color: mat-color($accent); }
+.text-primary   { color: mat-color($primary); }
+.text-info      { color: lighten($c-adspur-info, 10%); }
+.text-issue     { color: lighten($c-adspur-issue, 10%); }
+.text-warn      { color: lighten(mat-color($warn), 10%); }
+.text-success   { color: lighten($c-adspur-success, 10%); }
+
+.bg-teal       { background-color: $c-adspur-teal; color: #fff; }
+.bg-highlight  { background-color: mat-color($accent); color: #fff; }
+.bg-primary    { background-color: mat-color($primary); color: #fff; }
+.bg-info       { background-color: $c-adspur-info; color: #fff; }
+.bg-issue      { background-color: $c-adspur-issue; color: #fff; }
+.bg-warning    { background-color: mat-color($warn); color: #fff; }
+.bg-success    { background-color: $c-adspur-success; color: #fff; }
+.bg-light-grey { background-color: $c-adspur-light-grey; }
+
+
+
+// Taxonomy colours
+//=================
+.text-medium { color: $c-tax-medium; }
+.bg-medium {
+	background-color: $c-tax-medium;
+	color: #FFF;
+}
+.text-category { color: $c-tax-category; }
+.bg-category {
+	background-color: $c-tax-category;
+	color: #FFF;
+}
+
+
+// Award state colours
+//====================
+$award-states:
+	'grandprix' $c-award-grandprix $c-award-grandprix-color '1',
+	'gold' $c-award-gold $c-award-gold-color '2',
+	'silver' $c-award-silver $c-award-silver-color '3',
+	'bronze' $c-award-bronze $c-award-bronze-color '4',
+	'shortlist' $c-award-shortlist $c-award-shortlist-color '5',
+	'yellow' $c-award-yellow $c-award-yellow-color '6',
+	'entered' $c-award-entered $c-award-entered-color '7',
+	'awaiting' $c-award-awaiting $c-award-awaiting-color '8',
+	'inprogress' $c-award-inprogress $c-award-inprogress-color '9',
+	'feedback' $c-award-feedback $c-award-feedback-color '10',
+	'approved' $c-award-approved $c-award-approved-color '11',
+	'denied' $c-award-denied $c-award-denied-color '12',
+;
+// assign BACKGROUND color to corresponding NAME
+@each $award-state in $award-states {
+	.bg-#{nth($award-state, 1)} {
+		background: #{nth($award-state, 2)} !important;
+		color: #{nth($award-state, 3)};
+	}
+}
+// assign COLOR to corresponding NAME
+@each $award-state in $award-states {
+	.text-#{nth($award-state, 1)} {
+		color: #{nth($award-state, 2)};
+	}
+}
+// assign BACKGROUND color to corresponding TIER
+@each $award-state in $award-states {
+	.tire-bg-#{nth($award-state, 4)} {
+		background: #{nth($award-state, 2)} !important;
+		color: #{nth($award-state, 3)};
+	}
+}
+// assign COLOR to corresponding TIER
+@each $award-state in $award-states {
+	.tier-#{nth($award-state, 4)} {
+		color: #{nth($award-state, 2)};
+	}
+}
+
+
+// Entry state colours
+//====================
+$entry-states:
+	'1' $c-award-feedback $c-award-feedback-color,
+	'2' $c-award-approved $c-award-approved-color,
+	'3' $c-award-denied $c-award-denied-color,
+;
+// assign background color to corresponding label codes
+@each $entry-state in $entry-states {
+	.bg-#{nth($entry-state, 1)} {
+		background: #{nth($entry-state, 2)};
+		color: #{nth($entry-state, 3)};
+	}
+}
+// assign color to corresponding TEXT codes
+@each $entry-state in $entry-states {
+	.text-#{nth($entry-state, 1)} {
+		color: #{nth($entry-state, 2)};
+	}
+}
+
+
+
+// Date Type and State colours
+//============================
+
+//  'name-slug' | bg-color | text-color | 'eventDateTypeID'
+
+$date-types:
+	'default' $c-event-default #fff '0',
+	'eligible' $c-event-eligible #fff '0',
+	'not-eligible' $c-event-not-eligible #fff '0',
+	'today' $c-event-today #fff '0',
+	'eligibility-dates' $c-event-eligibility #fff '8',
+	'call-for-entries' $c-event-call-for-entries #fff '1',
+	'early-deadline' $c-event-early-deadline #fff '10',
+	'internal-deadline' $c-event-internal-deadline $c-adspur-body '1006',
+	'deadline' $c-event-deadline #fff '2',
+	'extended-deadline' $c-event-extended-deadline #fff '5',
+	'final-deadline' $c-event-final-deadline #fff '1007',
+	'judging' $c-event-judging #fff '9',
+	'festival' $c-event-festival #fff '3',
+	'award-show' $c-event-award-show #fff '4',
+	'winners-announced' $c-event-winners #fff '6',
+;
+
+// assign color to corresponding Type ID
+@each $date-type in $date-types {
+	.bg-date-#{nth($date-type, 4)} {
+		background: #{nth($date-type, 2)};
+		color: #{nth($date-type, 3)};
+	}
+
+	.shadow-date-#{nth($date-type, 4)} {
+		box-shadow: -15px -15px 0 #{nth($date-type, 2)};
+	}
+
+	.text-date-#{nth($date-type, 4)} {
+		color: #{nth($date-type, 2)};
+	}
+
+	.admin-awardshow-event-date-#{nth($date-type, 4)} {
+		border: 3px solid #{nth($date-type, 2)};
+		border-radius: 10px;
+		padding: 10px;
+		margin-bottom: 15px;
+	}
+
+	.admin-awardshow-event-label-#{nth($date-type, 4)} {
+		color: #{nth($date-type, 2)};
+		font-weight: #{$bold};
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}
+
+// assign color to corresponding Type SLUG
+@each $date-type in $date-types {
+	.bg-date-#{nth($date-type, 1)} {
+		background: #{nth($date-type, 2)};
+		color: #{nth($date-type, 3)};
+	}
+
+	.shadow-date-#{nth($date-type, 1)} {
+		box-shadow: -15px -15px 0 #{nth($date-type, 2)};
+	}
+
+	.text-date-#{nth($date-type, 1)} {
+		color: #{nth($date-type, 2)};
+	}
+}
+
+
+
+// Lists
+//======
+.blank-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	li {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.check-list {
+	list-style-type: none;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	padding-left: 0;
+
+	li {
+		margin-left: 0;
+
+		&:before {
+			content:"\2714\0020";
+			padding-right: .5em;
+			color: mat-color($accent);
+		}
+	}
+}
+
+
+// Comma separated list
+//=====================
+.comma-item {
+	&:after {
+		content: ", ";
+		white-space: pre;
+	}
+
+	&:last-of-type:after {
+		content: "";
+	}
+}
+
+
+
+// EXPAND MORE
+// Simple "...more" button using position relative
+// Example: Campaign Work template
+
+$line-height: 26px;
+
+.g-description {
+	position: relative;
+	padding-bottom: 16px;
+
+	p {
+		max-width: 38em;
+		font-size: 14px;
+		line-height: $line-height;
+		position: relative;
+		white-space: pre-line;
+	}
+
+	// Hide / Show line clamp usually set when .length > 400
+	&.expand-more {
+		.expand-more_panel {
+			overflow: hidden;
+
+			&.is-collapsed {
+				max-height: $line-height * 3; // Number of lines to clamp to
+			}
+		}
+
+		.expand-button {
+			position: absolute;
+			z-index: 1;
+			// font-weight: bold;
+			color: mat-color($accent);
+			background-color: $c-adspur-body-bg;
+			background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $c-adspur-body-bg 4px, $c-adspur-body-bg 100%);
+			box-shadow: none;
+			bottom: 0;
+			right: 0;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				color: #FFF;
+				background: mat-color($accent);
+				outline: none;
+			}
+		}
+	}
+}

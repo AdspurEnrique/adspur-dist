@@ -1,0 +1,109 @@
+
+// GLOBAL CREDIT BLOCK
+// ===================
+//
+// Basic tweaks for credits
+
+// <div class="credit-block">
+// 	<h2 class="mat-title"><strong>[Company]</strong>, [Company type]</h2>
+// 	<ol class="blank-list mat-type">
+// 		<li fxLayout="row wrap"
+// 			fxLayoutAlign="start center">
+// 			<h5 class="credit-block_role-title" fxFlex="100" fxFlex.gt-xs="30" fxFlex.gt-sm="20">[Role]</h5>
+// 			<div class="credit-block_person-list" fxFlex="100" fxFlex.gt-xs="70" fxFlex.gt-sm="80">
+// 				<span class="comma-item">[User]</span>
+// 			</div>
+// 		</li>
+// 	</ol>
+// </div>
+
+@import '../adspur-config';
+
+.credit-block {
+	padding: 16px;
+
+	.mat-title {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	// Credits
+	ol {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.credit-block_drag-handle {
+	padding-top: 4px;
+}
+
+.credit-block_role {
+	list-style-type: none;
+	padding: 0;
+	margin: 1px 0;
+}
+
+.credit-block_set-co-type .mat-title {
+	margin-bottom: 0;
+}
+
+.credit-block_role-title {
+	color: $c-adspur-teal;
+	padding-right: 12px;
+	font-size: 14px;
+	font-weight: $normal;
+	margin: 0;
+}
+
+.credit-block_person-list {
+	margin-left: 0;
+	font-size: 14px;
+
+	> span {
+		margin: 4px 0;
+		display: inline-block;
+		white-space: pre;
+	}
+
+	// Modified Chip for credits
+	.mat-chip-list-wrapper {
+		margin: 0;
+		padding: 4px;
+	}
+
+	.mat-chip-list {
+		min-height: 30px;
+		display: flex;
+		flex-direction: row;
+		border-radius: 4px;
+		transition: opacity .2s cubic-bezier(.35,0,.25,1);
+
+		&.cdk-drop-list-dragging {
+			background: #e0e0e0;
+		}
+	}
+}
+
+.mat-standard-chip.mat-chip-standard--credit {
+	min-height: 28px;
+	padding: 5px 10px;
+	font-size: 14px;
+
+	.mat-chip-remove.mat-chip-remove.mat-chip-remove {
+		margin-left: 6px;
+		transition: opacity .2s cubic-bezier(.35,0,.25,1);
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	// Drag related
+
+	&.cdk-drag {
+		padding: 5px 10px;
+		font-size: 14px;
+		cursor: ew-resize;
+	}
+}

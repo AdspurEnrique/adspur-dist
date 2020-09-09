@@ -1,0 +1,48 @@
+
+@import '../adspur-config';
+
+.fullscreen_header {
+	position: sticky;
+	z-index: 2;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	min-height: $header-height;
+	box-sizing: border-box;
+	// background: #fff;
+	padding-top: 6px;
+	padding-bottom: 6px;
+
+	@media (max-width: 959px) {
+		padding-left: 56px; // To make up the gap to the close button
+		padding-right: 56px; // To balance the logo space, center the text
+	}
+
+	.mat-display-0 {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: 4px;
+
+		// Truncate
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		@media (max-width: 959px) {
+			font-size: 20px;
+		}
+	}
+
+}
+
+// Fixes position X for closing fullscreen mode
+.fullscreen_close.fullscreen_close {
+	position: fixed;
+	top: 8px;
+	right: 16px;
+	z-index: 500;
+
+	@media (max-width: 959px) {
+		right: 8px;
+	}
+}

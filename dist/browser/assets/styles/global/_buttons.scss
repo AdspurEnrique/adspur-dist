@@ -1,0 +1,32 @@
+
+// GLOBAL BUTTONS
+// ==============
+//
+// Modifications of global Material buttons
+
+
+
+// Modifier for buttons
+.mat-fab.mat-fab.theme-light,
+.mat-icon-button.mat-icon-button.theme-light {
+	color: currentColor;
+	background-color: #fff;
+}
+
+.mat-button--lg.mat-button--lg {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.blank-button.blank-button {
+	background: none;
+	border-color: transparent;
+	border-style: none;
+	border-width: 0;
+	padding: initial;
+	align-items: flex-start;
+	text-align: start;
+	cursor: pointer;
+	color: inherit;
+	box-sizing: border-box;
+}

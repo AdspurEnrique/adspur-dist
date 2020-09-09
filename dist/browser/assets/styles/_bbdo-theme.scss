@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+
+// BBDO Network theme
+$bbdo-primary: mat-palette($mat-red, 500);
+$bbdo-accent:  mat-palette($mat-grey, 600);
+$bbdo-warn:    mat-palette($mat-red, 700);
+$bbdo-theme:   mat-light-theme($bbdo-primary, $bbdo-accent, $bbdo-warn);

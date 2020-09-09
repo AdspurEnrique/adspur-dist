@@ -1,0 +1,242 @@
+
+// GLOBAL LAYOUT
+// =============
+//
+// Global useful layout, utility and helper classes
+
+@import '~@angular/material/theming';
+@import '../adspur-config';
+@import '../adspur-theme';
+
+//-Images
+//-JW Player
+//-Layout bits
+//-Slider
+//-General page sections
+
+
+
+//-Images
+//=======
+
+// Make images stretchy
+img.g-resp-img {
+	max-width: 100%;
+	display: block;
+}
+
+// or round
+.g-round-img {
+	border-radius: 400px;
+	background-clip: border-box;
+	object-fit: cover;
+}
+
+// Subtle background gradient for empty images
+.g-img-bg {
+	display: block;
+	background: linear-gradient(225deg, #eee 0%,#ddd 100%);
+}
+
+
+
+//-JW Player
+//==========
+.g-media_container {
+	background-color: #000; // #2f3543; // Color from JW Player
+	padding: 0;
+	min-height: 100px;
+	max-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body .jw-error .jw-preview.jw-preview,
+body .jwplayer.jw-state-error .jw-preview.jw-preview {
+	background-color: #000; // #2f3543; // Color from JW Player
+}
+
+body .jw-controls-backdrop {
+	background: linear-gradient(to bottom,
+					transparent 0%,
+					rgba(0, 0, 0, 0.1) 50%,
+					rgba(0, 0, 0, 0.4) 100%
+				) 100% 100%/100% 100px no-repeat transparent;
+}
+
+
+
+
+
+//-Layout bits
+//============
+
+// Common flex spacer
+.g-flex-spacer {
+	flex: 1 1 auto;
+}
+
+
+// Flexbox centering
+.g-flexbox-centering.g-flexbox-centering.g-flexbox-centering {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+// Clear
+.g-clear { clear: both; }
+
+
+// Clearfix
+.g-clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+// Floats
+.g-fl-l { float: left; }
+.g-fl-r { float: right; }
+.g-fl-n { float: none; }
+
+
+// Max width to use throughout site
+.g-page-width {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1064px;
+	display: block;
+	position: relative;
+
+	@media (min-width: 960px) {
+		padding: 0 16px;
+	}
+	// Grid layout correction for page max-width
+	@media (min-width: 960px) and (max-width: 1280px) {
+		.g-grid-gap-correction {
+			margin-left: -16px;
+			margin-right: -16px;
+		}
+	}
+
+	&.g-page-width--narrow {
+		max-width: 680px;
+	}
+
+	&.g-page-width--v-narrow {
+		min-width: 288px;
+		max-width: 400px;
+
+	}
+}
+
+
+// Expand out to full width of a constrained wrapper
+.g-full-width {
+	position: relative;
+	width: 100vw;
+	left: 50%;
+	margin-left: -50vw;
+}
+
+
+
+
+
+//-Slider
+//=======
+
+// CSS based basic horizontal slider
+.g-h-slider-wrapper {
+	padding: 0;
+	margin: 0;
+	position: relative;
+
+	@media (min-width: 960px) {
+		margin: 0 -16px;
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 20px;
+		background: linear-gradient(to left,
+					$c-adspur-body-bg 0%,
+					rgba(255, 255, 255, 0) 100%);
+	}
+}
+
+
+// Horizontal item slider
+.g-h-slider {
+	display: flex;
+	align-items: stretch;
+	height: 100%;
+	position: relative;
+	overflow-x: auto;
+	min-width: calc(100% - 32px);
+	padding: 0 16px;
+}
+
+.g-h-slider_item {
+	flex: 1 1;
+	min-width: 300px; // example width, set in real use
+	margin: 0 8px 8px;
+	padding-top: 4px; // Space for shadow
+	padding-bottom: 4px; // Space for scroll bar
+	@media (min-width: 960px) {
+		&:first-child {
+			margin-left: 0;
+			}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+
+
+//-General page sections
+//======================
+
+// Section container
+.g-section {
+	margin-top: 24px;
+	margin-bottom: 24px;
+	padding-top: 24px;
+
+	> p {
+		padding-left: 16px;
+		padding-right: 16px;
+		@media (min-width: 960px) { padding-left: 0; padding-right: 0; }
+	}
+}
+
+.g-section_title.mat-title {
+	padding-left: 16px;
+	color: mat-color($primary);
+	font-family: $second-font, sans-serif;
+	font-weight: $second-font-heavy;
+	@media (max-width: 960px) { margin-bottom: 8px; }
+	@media (min-width: 960px) { padding-left: 0; }
+}
+
+.g-section_label.mat-caption {
+	font-size: 10px;
+	font-weight: $heavy;
+	line-height: normal;
+	color: mat-color($accent);
+	text-transform: uppercase;
+	margin-bottom: 8px;
+
+	padding-left: 16px;
+	@media (min-width: 960px) { padding-left: 0; }
+}

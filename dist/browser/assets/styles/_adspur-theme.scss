@@ -1,0 +1,74 @@
+@import '~@angular/material/theming';
+
+
+// ADSPUR THEME
+// Modified from Mat Light theme to change background
+
+// $modified-mat-light-theme-background is copied from Material _theming.scss and modified
+// using the approach outlined here - https://stackblitz.com/edit/angular-material-custom-background?file=theme.scss
+// Background palette for light themes.
+$modified-mat-light-theme-background: (
+  status-bar:               map_get($mat-grey, 300),
+  app-bar:                  map_get($mat-grey, 100),
+  background:             #fff,  // originally: map_get($mat-grey, 50)
+  hover:                    rgba(black, 0.04),
+  card:                   white,
+  dialog:                 white,
+  disabled-button:          rgba(black, 0.12),
+  raised-button:          white,
+  focused-button:           $dark-focused,
+  selected-button:          map_get($mat-grey, 300),
+  selected-disabled-button: map_get($mat-grey, 400),
+  disabled-button-toggle:   map_get($mat-grey, 200),
+  unselected-chip:          map_get($mat-grey, 300),
+  disabled-list-option:     map_get($mat-grey, 200),
+);
+
+// instead of creating a theme with mat-light-theme like a sane person, we will create our own theme-creating function that lets us apply our own background palette.
+@function create-adspur-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: $mat-light-theme-foreground,
+    background: $modified-mat-light-theme-background,
+  );
+}
+
+// Adspur base https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=37474F&secondary.color=FF3D00&secondary.text.color=FFFFFF&primary.text.color=FFFFFF
+$primary: mat-palette($mat-blue-grey, 800);
+$accent:  mat-palette($mat-deep-orange, A400);
+$warn:    mat-palette($mat-red, 700);
+$theme:   create-adspur-theme($primary, $accent, $warn);
+
+
+
+//// TYPOGRAPHY
+
+// Custom typography config that overrides the font-family as well as the `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  $body-2: 		mat-typography-level(16px, 24px, 400),
+  $headline:	mat-typography-level(24px, 32px, 700)
+);
+
+// DEFAULTS
+// $headline:		mat-typography-level(24px, 32px, 400) // <h1>
+// $title:			mat-typography-level(20px, 32px, 500) // <h2>
+// $subheading-2: 	mat-typography-level(16px, 28px, 400) // <h3>
+// $subheading-1: 	mat-typography-level(15px, 24px, 400) // <h4>
+// no mat config: 					    (11.62px,20px,400)// <h5>
+// no mat config: 					    (9.38px,20px, 400)// <h6>
+// $body-1: 		mat-typography-level(14px, 20px, 400) // <p>
+// $body-2: 		mat-typography-level(14px, 24px, 500) //
+// $caption: 		mat-typography-level(12px, 20px, 400) //
+
+// Also
+// .mat-display-4 	112px, 112px, 300, letter-spacing: -0.05em;
+// .mat-display-3 	56px, 56px, 400, letter-spacing: -0.02em;
+// .mat-display-2 	45px, 48px, 400
+
+// Default Material font-family
+// $font-family: 'Roboto, monospace',
+// <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">

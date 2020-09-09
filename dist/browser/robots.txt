@@ -1,0 +1,6 @@
+# Allow all URLs (see http://www.robotstxt.org/robotstxt.html)
+User-agent: *
+Disallow:
+
+# TODO
+# Sitemap: https://www.adspur.com/sitemap.xml

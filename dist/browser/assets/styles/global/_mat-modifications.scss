@@ -1,0 +1,237 @@
+
+// Global modifications to Material styles
+// =======================================
+//
+
+@import '~@angular/material/theming';
+@import '../adspur-config';
+@import '../adspur-theme';
+
+
+// 24px padded version of mat-card from before Material v7
+.mat-card.mat-card--padding {
+	padding: 24px;
+	@media (max-width: 599px) {
+		padding: 24px 16px;
+	}
+}
+
+
+// mat-card-title reset to 14px from 20px in before Material v7
+.mat-card-header .mat-card-title {
+	font-size: 14px;
+}
+
+
+// Card as button
+.mat-raised-button.mat-card {
+	line-height: initial;
+	text-align: initial;
+	white-space: initial;
+	font-weight: initial;
+}
+
+
+// Modal and Draw background
+.mat-drawer-container .mat-drawer-backdrop.mat-drawer-shown,
+.cdk-overlay-backdrop.cdk-overlay-dark-backdrop {
+	background-color: rgba(255, 255, 255, 0.60);
+}
+
+
+// Add a little more space for tooltip
+.mat-paginator .mat-paginator-container {
+	padding: 0 12px;
+}
+
+
+// mat-progress spinner modification
+.mat-spinner.mat-progress-spinner {
+	margin: 5em auto;
+	place-content: center;
+	align-items: center;
+	flex-direction: row;
+	box-sizing: border-box;
+	display: flex;
+}
+
+.mat-progress-bar[aria-valuenow='100'] {
+	.mat-progress-bar-fill::after {
+		background: $c-adspur-success;
+	}
+}
+
+
+// Reset excessive toggle button height
+.mat-button-toggle.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+	line-height: 36px;
+}
+
+
+// Reduce the Slide toggle label font-size
+.mat-slide-toggle-content {
+	font-size: 12px;
+}
+
+
+// Stop mat-divider expanding beyond list
+.mat-list, .mat-nav-list, .mat-selection-list {
+	position: relative;
+}
+
+
+// Unset height restriction
+.mat-list--free-height.mat-list--free-height {
+	.mat-list-item,
+	.mat-list-item.mat-2-line {
+		height: auto;
+		padding: 16px 0;
+
+		.mat-line {
+			white-space: initial;
+			overflow: auto;
+			text-overflow: initial;
+		}
+	}
+}
+
+
+// Dropdown / Options / Auto-completes
+
+// Slightly darker hover / focus state to differ from .mat-active
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option:focus:not(.mat-option-disabled) {
+	background: rgba(0, 0, 0, 0.08);
+}
+
+
+// Autocomplete row highlight. eg in Credits
+.custom_autocomplete-highlight.mat-option {
+	font-weight: $heavy;
+	background: lighten(mat-color($accent), 42%);
+
+	&:hover:not(.mat-option-disabled),
+	&:focus:not(.mat-option-disabled) {
+		background: lighten(mat-color($accent), 40%);
+	}
+
+	.mat-icon {
+		margin-right: 0;
+	}
+}
+
+
+// Border radius modification for list of cards butted together
+.joined-card-list {
+	border-radius: $b-rad;
+
+	.mat-card,
+	.entry-row {
+		border-radius: 0;
+	}
+
+	.manager-file_item:first-of-type .mat-card,
+	.edit-campaign_item:first-of-type .mat-card,
+	[mat-list-item]:first-of-type .mat-card,
+	.joined-card-list_item:first-child .mat-card,
+	.app-medium--item:first-of-type,
+	app-entry-list-item:first-of-type .entry-row,
+	& > app-entry-row:first-of-type .entry-row {
+		border-top-left-radius: $b-rad;
+		border-top-right-radius: $b-rad;
+	}
+
+	.manager-file_item:last-of-type .mat-card,
+	.edit-campaign_item:last-of-type .mat-card,
+	[mat-list-item]:last-of-type .mat-card,
+	.joined-card-list_item:last-child .mat-card,
+	.app-medium--item:last-of-type,
+	app-entry-list-item:last-of-type .entry-row,
+	& > app-entry-row:last-of-type .entry-row {
+		border-bottom-left-radius: $b-rad;
+		border-bottom-right-radius: $b-rad;
+	}
+
+	app-entry-list-item .entry-row.mat-expanded,
+	& > app-entry-row .entry-row.mat-expanded {
+		border-radius: $b-rad;
+	}
+}
+
+
+// Strip back input for styling, eg Search inputs and Order-by
+// Put on <mat-form-field>
+.mat-input-striped {
+	border-radius: $b-rad;
+
+	.mat-form-field-wrapper {
+		padding-bottom: 0;
+
+		.mat-form-field-flex {
+			padding-top: 0;
+		}
+	}
+	.mat-form-field-infix {
+		padding-top: 0;
+		border-top-width: 5px;
+		padding-bottom: 6px;
+	}
+	.mat-form-field-underline {
+		display: none;
+	}
+	.mat-form-field-prefix,
+	.mat-form-field-suffix {
+		transform: translateY(6px);
+	}
+}
+
+
+// Separator for dialog content and actions
+.mat-dialog-content {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+
+// Material Icon modifiers
+.mat-icon.mat-icon--xs {
+	height: 12px;
+	width: 12px;
+	font-size: 12px;
+}
+
+.mat-icon.mat-icon--sm {
+	height: 16px;
+	width: 16px;
+	font-size: 16px;
+}
+
+.mat-icon.mat-icon--md {
+	height: 20px;
+	width: 20px;
+	font-size: 20px;
+}
+
+.mat-icon.mat-icon--lg {
+	height: 32px;
+	width: 32px;
+	font-size: 32px;
+}
+
+.mat-icon.mat-icon--2x {
+	height: 48px;
+	width: 48px;
+	font-size: 48px;
+}
+
+.mat-icon.mat-icon--3x {
+	height: 72px;
+	width: 72px;
+	font-size: 72px;
+}
+
+
+ // Add some padding to bottom of sidebar
+ .mat-drawer-inner-container {
+	padding-bottom: 32px;
+	box-sizing: border-box;
+}

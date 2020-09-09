@@ -1,0 +1,52 @@
+
+@import '../adspur-config';
+
+.joined-tab-bar_mask {
+	height: 6px;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	margin-top: -2px;
+	@media (min-width: 960px) {
+		left: 16px;
+		right: 16px;
+	}
+}
+
+.joined-tab-bar {
+	&.mat-tab-nav-bar {
+		margin-top: -1px;
+		margin-bottom: 1em;
+		position: relative;
+		background: #fff;
+		border-bottom: 0;
+		border-bottom-left-radius: $b-rad;
+		border-bottom-right-radius: $b-rad;
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			width: 25px;
+			background: linear-gradient(to left,
+						$c-adspur-body-bg 0%,
+						rgba(255, 255, 255, 0) 100%);
+		}
+	}
+
+	.mat-tab-links {
+		display: flex;
+		align-items: stretch;
+		height: 100%;
+		overflow-x: auto;
+	}
+
+	.mat-tab-link {
+		min-width: auto;
+	}
+}

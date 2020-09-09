@@ -1,0 +1,66 @@
+
+// GLOBAL BASIC ALERT
+// ==================
+//
+// <div class="alert is-info || is-issue || is-warning || is-success">
+//   <p>A normal paragraph with <em>emphasis</em>, <strong>strong</strong>, <code>code</code> etc.</p>
+// </div>
+
+@import '~@angular/material/theming';
+@import '../adspur-config';
+@import '../adspur-theme';
+
+.alert {
+    padding: 16px;
+    margin: 24px 0px;
+    font-size: 14px;
+    color: $c-adspur-body;
+    width: 100%;
+    box-sizing: border-box;
+    clear: both;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: $bold;
+    }
+
+    &.is-info { // Teal
+        border-left: 8px solid $c-adspur-info;
+        background-color: rgba($c-adspur-info, 0.05);
+
+        h1, h2, h3, h4, h5, h6, .mat-icon {
+            color: $c-adspur-info;
+        }
+    }
+
+	&.is-issue { // Orange
+		border-left: 8px solid $c-adspur-issue;
+		background-color: rgba($c-adspur-issue, 0.05);
+
+		h1, h2, h3, h4, h5, h6, .mat-icon {
+			color: $c-adspur-issue;
+		}
+	}
+
+    &.is-warning { // Red
+        border-left: 8px solid mat-color($warn);
+        background-color: rgba(mat-color($warn), 0.05);
+
+        h1, h2, h3, h4, h5, h6, .mat-icon {
+            color:  mat-color($warn);
+        }
+	}
+
+	&.is-success { // Green
+        border-left: 8px solid $c-adspur-success;
+        background-color: rgba($c-adspur-success, 0.05);
+
+        h1, h2, h3, h4, h5, h6, .mat-icon {
+            color:  $c-adspur-success;
+        }
+    }
+
+	.mat-typography & > *,
+    > * {
+        margin: 8px 16px;
+    }
+}
